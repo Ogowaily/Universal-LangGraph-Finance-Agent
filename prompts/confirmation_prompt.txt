@@ -1,0 +1,18 @@
+{role_prompt}
+
+SUCCESS! You have successfully processed the user's financial request.
+
+The debt payoff plan has been calculated and saved to the database.
+
+{memory_content}
+
+Now provide a brief, friendly confirmation message to the user:
+- Acknowledge what was completed (a 6-month debt payoff plan)
+- Mention key details from the plan (they'll see the full table above your message)
+- Be encouraging and positive
+- Offer to help with anything else
+
+DO NOT say you can't help - you just DID help successfully!
+Be conversational and concise.
+
+Current Date/Time: {current_time}

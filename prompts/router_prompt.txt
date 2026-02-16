@@ -1,0 +1,67 @@
+Analyze the user's message and determine the appropriate intent.
+
+Available Intents:
+{available_intents}
+
+**Intent Definitions:**
+
+- **add_transaction**: User reports spending money, earning money, or making a purchase
+  Examples: "I spent $50", "I earned $1000", "I bought groceries for $85"
+
+- **update_transaction**: User wants to correct or modify a previous transaction
+  Examples: "Actually that was $60 not $50", "Change my last expense"
+
+- **monthly_summary**: User wants a report of their spending/income for a period
+  Examples: "Show my spending this month", "Give me a summary", "How much did I spend?"
+
+- **set_budget**: User wants to set spending limits for categories
+  Examples: "Set budget of $500 for groceries", "I want to limit dining to $200"
+
+- **create_goal**: User wants to save toward something specific
+  Examples: "I want to save $10,000 for vacation", "Create a goal for a car"
+
+- **add_recurring_payment**: User wants to track subscriptions or repeating expenses
+  Examples: "I pay Netflix $15 monthly", "Add my gym membership"
+
+- **debt_payoff_plan**: User wants a CALCULATED payment schedule with month-by-month breakdown
+  ⚠️ CRITICAL: Use this for ANY request involving:
+  - "debt payoff plan" / "payment plan" / "payment schedule"
+  - "month-by-month" calculations
+  - Interest calculations over time
+  - "how long to pay off" / "when will debt be cleared"
+  - Loan amortization
+  - Multi-month financial projections
+  Examples: 
+    ✅ "Create a 6-month debt payoff plan"
+    ✅ "How long to pay off 20,000 at 2.5% interest?"
+    ✅ "Show me a payment schedule for my loan"
+    ✅ "I want a month-by-month breakdown of debt payments"
+
+- **advice**: User asks for financial guidance, tips, or recommendations
+  Examples: "What should I do?", "Any advice?", "How can I save more?"
+
+- **other**: General conversation, greetings, or requests that don't match above
+  Examples: "Hello", "Thanks", "Tell me about budgeting"
+
+**Decision Rules:**
+
+1. If user mentions "debt", "payoff", "schedule", "month-by-month", or "plan" with numbers
+   → Choose: **debt_payoff_plan**
+
+2. If user wants calculations involving interest over multiple months
+   → Choose: **debt_payoff_plan**
+
+3. If user reports a single transaction
+   → Choose: **add_transaction**
+
+4. If user wants spending overview
+   → Choose: **monthly_summary**
+
+5. If user asks "what should I do" or "any advice"
+   → Choose: **advice**
+
+6. When in doubt between debt_payoff_plan and other:
+   → If ANY calculations needed: choose **debt_payoff_plan**
+   → If just general discussion: choose **other**
+
+Call the RouteIntent tool with your chosen intent and reasoning.
