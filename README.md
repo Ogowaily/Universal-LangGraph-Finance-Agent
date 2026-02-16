@@ -26,6 +26,7 @@
 - [License](#-license)
 
 ---
+<img width="1027" height="474" alt="Screenshot 2026-02-16 211841" src="https://github.com/user-attachments/assets/d6483a0c-5996-4d0d-9b90-bb217f4a54d0" />
 
 ## 🎯 Overview
 
@@ -889,9 +890,9 @@ SOFTWARE.
 
 ## 📞 Contact & Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/universal-finance-agent/issues)
-- **LinkedIn**: [Connect with me](https://linkedin.com/in/yourprofile)
-- **Portfolio**: [View more projects](https://yourportfolio.com)
+ 
+- **LinkedIn**: [Connect with me](https://www.linkedin.com/in/omar-gowaily-787536298/)
+ 
 
 ---
 
