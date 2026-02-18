@@ -5,6 +5,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > A production-ready, config-driven agentic AI framework built with LangGraph that demonstrates scalable multi-domain assistant architecture through intelligent intent routing and modular executor design.
+## ⚠️ Known Issues
+
+- Some transactions may not be recorded due to edge cases.
+- Monthly summaries may occasionally miss recent entries.
+- Core functionality (intent routing, executors, budget & debt planning) is working.
+- Future improvements can fix the issues above and add full coverage for all intents.
 
 ---
 
